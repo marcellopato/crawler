@@ -7,6 +7,7 @@ This is a open repository using Laravel Dusk and Laravel Sail
 - Clone this repository
 - cd crawler
 - cp .env.example .env
+- composer update
 - Make your changes
 - Start your Docker application
 - ./vendor/bin/sail up
