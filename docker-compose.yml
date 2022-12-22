@@ -24,6 +24,7 @@ services:
             - sail
         depends_on:
             - meilisearch
+            - selenium
     meilisearch:
         image: 'getmeili/meilisearch:latest'
         ports:
@@ -36,6 +37,12 @@ services:
             test: ["CMD", "wget", "--no-verbose", "--spider",  "http://localhost:7700/health"]
             retries: 3
             timeout: 5s
+    selenium:
+        image: 'selenium/standalone-chrome'
+        volumes:
+            - '/dev/shm:/dev/shm'
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge
